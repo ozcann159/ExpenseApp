@@ -15,9 +15,12 @@ class ExpenseItem extends StatelessWidget {
             SizedBox(height: 10),
             Row(
               children: [
-                Text(expense.price
-                    .toString()), //enum olduğu için toString'e çevirdik
-                SizedBox(width: 8),
+                Text(
+                    "${expense.price.toStringAsFixed(2)} ₺"), //enum olduğu için toString'e çevirdik
+                const Spacer(),
+                const SizedBox(width: 8),
+                Icon(categoryIcons[expense.category]),
+                const SizedBox(width: 8),
                 Text(expense.formatterDate), //Tarih formatı
               ],
             )
